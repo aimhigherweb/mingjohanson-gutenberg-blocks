@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks, InspectorControls } from '@wordpress/block-editor';
-import { ColorPalette } from '@wordpress/components';
+import { ColorPalette, FormToggle } from '@wordpress/components';
 
 const colourContainer = () => {
 	registerBlockType('aimhigher/colour-container', {
@@ -12,35 +12,52 @@ const colourContainer = () => {
 				type: 'string',
 				default: false
 			},
+			transparency: {
+				type: 'boolean',
+				default: false
+			}
 		},
 		edit(props) {
 			const colours = [
 				{
-					name: 'Blue',
-					slug: 'blue',
-					color: '#007cbb',
-				},
-				{
 					name: 'Aqua',
 					slug: 'aqua',
-					color: '#00acbb',
+					color: '#10bdc8',
+				},
+				{
+					name: 'Purple',
+					slug: 'purple',
+					color: '#92278f',
 				},
 				{
 					name: 'Grey',
 					slug: 'grey',
-					color: '#4c4d4e'
+					color: '#58595c'
+				},
+				{
+					name: 'Black',
+					slug: 'black',
+					color: '#000000',
+				},
+				{
+					name: 'White',
+					slug: 'white',
+					color: '#ffffff',
 				},
 			];
 
 			let colour = props.attributes.colour,
+			transparency = props.attributes.transparency,
 			styles = {}
 			
 			if(colour) {
 				styles = {'--background': colour }
 			}
 
+			console.log(props.attributes)
+
 			return (
-				<div className="colour-container" style={styles}>
+				<div className={`colour-container ${transparency && 'transparent'}`} style={styles}>
 					{
 						<InspectorControls>
 							<h2>Colour settings</h2>
@@ -52,6 +69,11 @@ const colourContainer = () => {
 									props.setAttributes({colour: e})
 								} }
 							/>
+							<h2>Background Transparency</h2>
+							<FormToggle 
+								checked={ transparency }
+								onChange={ () => props.setAttributes({transparency: ! transparency}) } 
+							/>
 						</InspectorControls>
 					}
 					<InnerBlocks/>
@@ -61,6 +83,7 @@ const colourContainer = () => {
 	
 	save(props) {
 		let colour = props.attributes.colour,
+			transparency = props.attributes.transparency,
 			styles = {}
 			
 			if(colour) {
@@ -68,7 +91,7 @@ const colourContainer = () => {
 			}
 		
 		return (
-			<div className="colour-container" style={styles}>
+			<div className={`colour-container ${transparency && 'transparent'}`} style={styles}>
 				<InnerBlocks.Content/>
 			</div>
 		);
