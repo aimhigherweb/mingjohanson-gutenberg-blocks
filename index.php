@@ -1,9 +1,11 @@
 <?php
 
 /**
- * Plugin Name: AimHigher Custom Gutenberg Blocks
+ * Plugin Name: Ming Johanson Custom Gutenberg Blocks
  * Version: 1.0.0
+ * Plugin URI: https://github.com/aimhigherweb/mingjohanson-gutenberg-blocks
  * Author: AimHigher Web Design
+ * Author URI: https://aimhigherweb.design
  *
  */
 
