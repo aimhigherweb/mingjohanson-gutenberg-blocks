@@ -54,8 +54,6 @@ const colourContainer = () => {
 				styles = {'--background': colour }
 			}
 
-			console.log(props.attributes)
-
 			return (
 				<div className={`colour-container ${transparency && 'transparent'}`} style={styles}>
 					{
