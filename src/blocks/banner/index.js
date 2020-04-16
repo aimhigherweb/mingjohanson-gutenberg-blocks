@@ -34,7 +34,7 @@ const Banner = () => {
 			styles = {}
 			
 			if(banner) {
-				styles = {'--bannerImage': banner }
+				styles = {'--bannerImage': `url(${banner})` }
 			}
 			
 			return (
@@ -74,7 +74,7 @@ const Banner = () => {
 			styles = {}
 			
 			if(banner) {
-				styles = {'--bannerImage': banner }
+				styles = {'--bannerImage': `url(${banner})` }
 			}
 
 			return (
