@@ -20,6 +20,11 @@
 	}
 }
 
+.grid-container {
+	border: 2px solid $main;
+	padding: 20px;
+}
+
 .image-container {
 	background: var(--backgroundImage);
 

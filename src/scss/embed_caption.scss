@@ -1,0 +1,11 @@
+.media_caption {
+	border: 2px solid $main;
+	label {
+		font-weight: bold;
+	}
+
+	figcaption {
+		border: 2px solid $main;
+		border-radius: 10px;
+	}
+}

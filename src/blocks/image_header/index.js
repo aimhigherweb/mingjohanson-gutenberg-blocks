@@ -11,17 +11,17 @@ const ImageHeader = () => {
 		attributes: {
 			title: {
 				type: 'string',
-				selector: '.image-header .title',
+				selector: '.headings .title',
 				source: 'text'
 			},
 			subtitle: {
 				type: 'string',
-				selector: '.image-header .subtitle',
+				selector: '.headings .subtitle',
 				source: 'text'
 			},
 			other_sub: {
 				type: 'string',
-				selector: '.image-header .sub',
+				selector: '.headings .sub',
 				source: 'text'
 			},
 			image: {
@@ -77,10 +77,10 @@ const ImageHeader = () => {
 			}
 
 			return (
-				<div class="headings" style={styles}>
-					<p class="title">{props.attributes.title}</p>
-					<p class="subtitle">{props.attributes.subtitle}</p>
-					<p class="sub">{props.attributes.other_sub}</p>
+				<div className="headings" style={styles}>
+					<p className="title">{props.attributes.title}</p>
+					<p className="subtitle">{props.attributes.subtitle}</p>
+					<p className="sub">{props.attributes.other_sub}</p>
 				</div>
 			)
 		},
