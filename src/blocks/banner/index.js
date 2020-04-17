@@ -77,10 +77,12 @@ const Banner = () => {
 				styles = {'--bannerImage': `url(${banner})` }
 			}
 
+			console.log(props.attributes)
+
 			return (
 				<div className="banner" style={styles}>
-					<blockquote>{props.attributes.text}</blockquote>
-					<a href={props.attributes.cta_url} className="btn cta">{props.attributes.cta_text}</a>
+					{props.attributes.text && <blockquote>{props.attributes.text}</blockquote>}
+					{props.attributes.cta_text && <a href={props.attributes.cta_url} className="btn cta">{props.attributes.cta_text}</a>}
 				</div>
 			);
 
